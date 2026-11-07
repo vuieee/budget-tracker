@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Budget Tracker</title>
+<meta name="description" content="A local-first budget, savings, and debt tracker.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site-ui.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/site-theme.css">
+</head>
+<body class="budget-page" data-theme="dark">
+<div id="wrapper">
+  <main id="main">
+  <h1 class="app-title">Budget Tracker</h1>
+  <div id="app">
+    <div id="trackerMain">
+      <header class="app-bar">
+        <div class="search-wrap">
+          <input id="globalSearch" type="text" placeholder="Search goals, expenses, debt, notes..." autocomplete="off">
+        </div>
+        <div class="app-bar-right">
+          <span id="todayDate" class="today-date"></span>
+          <span id="autosaveIndicator" class="autosave-indicator" role="status">Saved</span>
+          <div class="quick-add">
+            <button id="quickAddBtn" class="quick-add-trigger" title="Quick Add (Q)" aria-label="Quick add" aria-expanded="false" aria-controls="quickAddMenu">+ Add</button>
+            <div id="quickAddMenu" class="quick-add-menu hidden">
+              <button data-quick="expense">+ Expense</button>
+              <button data-quick="goal">+ Savings Goal</button>
+              <button data-quick="debt">+ Debt Entry</button>
+              <button data-quick="contribution">+ Contribution</button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <nav class="tracker-tabs" role="tablist" aria-label="Budget tracker sections">
+        <button id="tab-dashboard" class="nav-item active" type="button" role="tab" aria-selected="true" aria-controls="view-dashboard" tabindex="0" data-view="dashboard">Dashboard</button>
+        <button id="tab-savings" class="nav-item" type="button" role="tab" aria-selected="false" aria-controls="view-savings" tabindex="-1" data-view="savings">Savings Goals</button>
+        <button id="tab-budget" class="nav-item" type="button" role="tab" aria-selected="false" aria-controls="view-budget" tabindex="-1" data-view="budget">Budget Tracker</button>
+        <button id="tab-debt" class="nav-item" type="button" role="tab" aria-selected="false" aria-controls="view-debt" tabindex="-1" data-view="debt">Debt Tracker</button>
+        <button id="tab-analytics" class="nav-item" type="button" role="tab" aria-selected="false" aria-controls="view-analytics" tabindex="-1" data-view="analytics">Analytics</button>
+        <button id="tab-settings" class="nav-item" type="button" role="tab" aria-selected="false" aria-controls="view-settings" tabindex="-1" data-view="settings">Settings</button>
+      </nav>
+
+      <div id="searchResults" class="search-results hidden"></div>
+
+      <section id="view-dashboard" class="view active" role="tabpanel" aria-labelledby="tab-dashboard" tabindex="0"></section>
+      <section id="view-savings" class="view" role="tabpanel" aria-labelledby="tab-savings" tabindex="0"></section>
+      <section id="view-budget" class="view" role="tabpanel" aria-labelledby="tab-budget" tabindex="0"></section>
+      <section id="view-debt" class="view" role="tabpanel" aria-labelledby="tab-debt" tabindex="0"></section>
+      <section id="view-analytics" class="view" role="tabpanel" aria-labelledby="tab-analytics" tabindex="0"></section>
+      <section id="view-settings" class="view" role="tabpanel" aria-labelledby="tab-settings" tabindex="0"></section>
+    </div>
+  </div>
+
+  <p class="storage-note">Budget Tracker stores your data in this browser.</p>
+  </main>
+</div>
+
+<div id="toastStack" class="toast-stack"></div>
+
+<div id="modalRoot" class="modal-root hidden">
+  <div class="modal-backdrop"></div>
+  <div class="modal-box" id="modalBox"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.umd.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/calendar.js"></script>
+<script src="js/savings.js"></script>
+<script src="js/budget.js"></script>
+<script src="js/debt.js"></script>
+<script>Core.boot();</script>
+</body>
+</html>

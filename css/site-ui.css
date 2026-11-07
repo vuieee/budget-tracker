@@ -1,0 +1,101 @@
+:root {
+  --bg_h: #262626;
+  --bg: #262626;
+  --bg_s: #30302f;
+  --bg1: #3a3b39;
+  --bg2: #4a4b49;
+  --bg3: #595959;
+  --bg4: #888c79;
+  --fg: #f0f1f2;
+  --fg1: #f0f1f2;
+  --fg2: #d9d3c7;
+  --fg3: #d9d3c7;
+  --fg4: #d9d3c7;
+  --red: #efaaa6;
+  --red-dim: #b97571;
+  --green: #b9c3a0;
+  --green-dim: #888c79;
+  --yellow: #e4cc99;
+  --orange: #e3b08e;
+  --purple: #c5b7d9;
+  --blue: #d9d3c7;
+  --blue-dim: #c9cdbd;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  color-scheme: dark;
+}
+
+body.budget-page[data-theme="light"] {
+  color-scheme: light;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "Fira Code", ui-monospace, "SFMono-Regular", Consolas, monospace;
+  line-height: 1.55;
+}
+
+#wrapper {
+  width: min(calc(100% - 2rem), 900px);
+  margin-inline: auto;
+  padding: 2rem 0 1.5rem;
+}
+
+#main {
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--fg1);
+  font-family: inherit;
+}
+
+h1 {
+  font-size: clamp(1.45rem, 4vw, 2rem);
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+p {
+  color: var(--fg2);
+}
+
+a {
+  color: var(--blue);
+}
+
+a:hover {
+  color: var(--blue-dim);
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline-color: var(--blue);
+}
+
+@media (max-width: 700px) {
+  #wrapper {
+    width: min(calc(100% - 1rem), 900px);
+    padding-top: 1.25rem;
+  }
+}
