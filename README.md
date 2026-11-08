@@ -1,8 +1,5 @@
 # Budget Tracker Desktop
 
-<<<<<<< HEAD
-A native Windows desktop budget, savings, and debt tracker built with Python and PySide6. The app is local-first and does not need a network connection.
-
 ## Run from source
 
 1. Install Python 3.10 or later.
