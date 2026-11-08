@@ -1,5 +1,6 @@
 # Budget Tracker Desktop
 
+<<<<<<< HEAD
 A native Windows desktop budget, savings, and debt tracker built with Python and PySide6. The app is local-first and does not need a network connection.
 
 ## Run from source
@@ -45,3 +46,6 @@ The former browser implementation remains in the repository to support browser-d
 ```powershell
 python -m unittest discover -s tests -v
 ```
+=======
+Open `index.html` in a browser or publish this folder with GitHub Pages. Data is stored in the browser. Charts load Chart.js from a CDN.
+>>>>>>> 90071815f1427c5882123cae7b98e01dfa7a1d70
